@@ -7,8 +7,11 @@ function get_db() {
     // default Heroku Postgres configuration URL
     $dbUrl = getenv('DATABASE_URL');
 
+    echo "in get_db() and url is $dbUrl";
+
     if (empty($dbUrl)) {
      $dbUrl = "postgres://postgres:postgres@localhost:5432/postgres";
+     echo "is empty and url is $dbUrl";
     }
 
     $dbopts = parse_url($dbUrl);
