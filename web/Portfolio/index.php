@@ -2,8 +2,6 @@
     require "db/project_model.php";
     $projects = getAllProjects();
     $images = getProjImg();
-
-    $images = getAllImages();
 ?>
 <!DOCTYPE html>
 <html>
