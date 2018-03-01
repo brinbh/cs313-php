@@ -1,6 +1,5 @@
 <?php
     require "db/project_model.php";
-    require "db/image_model.php";
     $projects = getAllProjects();
     $images = getProjImg();
 
@@ -66,7 +65,7 @@
 
                 <?php
                 foreach ($images as $image) {
-                    echo $image['image_url'];
+                    echo $image["image_url"];
                 }
                 foreach ($projects as $project) {
 
