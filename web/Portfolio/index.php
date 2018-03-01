@@ -1,9 +1,9 @@
 <?php
     require "db/project_model.php";
-//    require "db/image_model.php";
+    require "db/image_model.php";
     $projects = getAllProjects();
 
-//    $images = getAllImages();
+    $images = getAllImages();
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,10 +64,14 @@
                 <!-- Projects /-->
 
                 <?php
+                foreach ($images as $image) {
+                    echo "<img src='".$image['image_url']."'>";
+                }
 
                 foreach ($projects as $project) {
+
                     echo "<div class='img-container'>";
-                    echo "<a herf='".$project_html."'>";
+                    echo "<a href='".$project_html."'>";
                     echo "<p>".$project["project_title"]."</p></a>";
                     echo "</div>";
                 }?>

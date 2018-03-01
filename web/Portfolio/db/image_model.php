@@ -1,18 +1,16 @@
 <?php
 // connect to database
 require "database.php";
-//print "ImageModel";
+print "ImageModel";
 
  get
 function getAllImages() {
     print "getAllImages()";
     $db = get_db();
-    $stmt = $db->prepare("SELECT image_id,
-                         image_url,
-                         image_project
-                         FROM portfolio.image");
+    $query = "SELECT image_id, image_url, image_project FROM image";
+    $stmt = $db->prepare($query);
     $stmt->execute();
-    $imageData = $stmt->fetch(PDO::FETCH_ASSOC);
+    $projectData = $stmt->fetchAll();
     $stmt->closeCursor();
 
     return $imageData;
