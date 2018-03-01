@@ -68,12 +68,12 @@
                 echo "<p>TEST</p>";
                 for ($i = 0; $i < 5; $i++) {
                     echo "testing";
-                    echo $projects[$i];
+                    echo $projects;
                 }
                 foreach ($projects as $project) {
                 echo "index.php $project";
                 echo "<div class='img-container'>";
-                echo "<p>".$project['project_title']."</p>";
+                echo "<p>".$project["project_title"]."</p>";
                 echo "</div>";
                 }?>
 
