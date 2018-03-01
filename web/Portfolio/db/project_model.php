@@ -4,6 +4,7 @@ require "database.php";
 
 // get
 function getAllProjects() {
+    echo "getAllProjects()";
     $db = get_db();
     $query = 'SELECT project_id, project_title, project_html, project_description, project_img FROM portfolio.project';
     $stmt = $db->prepare($query);

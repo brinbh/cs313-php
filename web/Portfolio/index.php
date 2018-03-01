@@ -64,6 +64,7 @@
 
                 <?php
                 foreach ($projects as $project) {
+                echo "index.php";
                 echo "<div class='img-container'>";
                 echo "<a href='".$project['project_html']."' >";
                 echo "<img class='project-img' src='".$project['project_img']."'></a>";
