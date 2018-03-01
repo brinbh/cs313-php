@@ -63,6 +63,7 @@
                 <!-- Projects /-->
 
                 <?php
+                echo "<p>TEST</p>"
                 foreach ($projects as $project) {
                 echo "index.php";
                 echo "<div class='img-container'>";
