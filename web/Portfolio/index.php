@@ -2,7 +2,6 @@
     require "db/project_model.php";
 //    require "db/image_model.php";
     $projects = getAllProjects();
-    print "projects: $projects";
 
 //    $images = getAllImages();
 ?>
@@ -65,16 +64,12 @@
                 <!-- Projects /-->
 
                 <?php
-                echo "<p>TEST</p>";
-                for ($i = 0; $i < 5; $i++) {
-                    echo "testing";
-                    echo $projects;
-                }
+
                 foreach ($projects as $project) {
-                echo "index.php $project";
-                echo "<div class='img-container'>";
-                echo "<p>".$project["project_title"]."</p>";
-                echo "</div>";
+                    echo "<div class='img-container'>";
+                    echo "<a herf='".$project_html."'>";
+                    echo "<p>".$project["project_title"]."</p></a>";
+                    echo "</div>";
                 }?>
 
             </div>
