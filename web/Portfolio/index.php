@@ -3,6 +3,7 @@
 //    require "db/image_model.php";
     $projects = getAllProjects();
     print "projects: $projects";
+
 //    $images = getAllImages();
 ?>
 <!DOCTYPE html>
@@ -69,7 +70,7 @@
                 echo "index.php $project";
                 echo "<div class='img-container'>";
                 echo "<a href='".$project['project_html']."' >";
-                echo "<img class='project-img' src='".$project['project_img']."'></a>";
+                echo "<p>".$project['project_title']</p></a>";
                 echo "</div>";
                 }?>
 
