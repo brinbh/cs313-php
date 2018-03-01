@@ -1,0 +1,121 @@
+/*RESET*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*TYPOGRAPHY*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800');
+/*Open Sans Numbers: Light - 300; Regular: 400; Bold: 700; Extra-Bold: 800;*/
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-weight: 300;
+    padding-top: 2rem;
+}
+h2 {
+    font-weight: 700;
+    padding-top: 1.75rem;
+}
+h3 {
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
+p{
+    padding-top: 1rem;
+}
+
+/*COLOR*/
+body{
+    background-color: #F2F1EF;
+}
+
+
+/*LAYOUT*/
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.content, header{
+    display: flex; 
+    flex-flow: column nowrap;
+    align-content: center;
+    align-items: center;
+    margin: 20px 10px;
+    padding: 0px 20px;
+    width: 70%;
+}
+
+.menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 100%;
+    margin: 50px 0px;
+}
+img{
+    margin: 10px;
+}
+
+.button{
+    padding: 15px;
+    background-color: #515151;
+    color: #fff;
+    margin: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #333;
+}
+.project-img {
+    max-width: 300px;
+    /*max-height: 240px;*/
+    align: center;
+    opacity: .7;
+}
+.project-img:hover {
+    opacity: 1;
+}
+.img-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 8px;
+    border-radius: 5px;
+}
+.projects-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/*FORM*/
+input[type=text], input[type=password] {
+    width: 100%;
+    min-height: 50px;
+    border: none;
+}
+
+.projects {
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.project-img-manage {
+    /*max-width: 300px;*/
+    max-height: 200px;
+    align: center;
+}

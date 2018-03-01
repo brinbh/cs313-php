@@ -1,0 +1,169 @@
+/*RESET*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*TYPOGRAPHY*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800');
+/*Open Sans Numbers: Light - 300; Regular: 400; Bold: 700; Extra-Bold: 800;*/
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'Open Sans', sans-serif;
+    color: #515151;
+    text-decoration: none;
+}
+h1 {
+    font-weight: 300;
+}
+h2 {
+    font-weight: 700;
+    padding-top: 1.75rem;
+}
+h3 {
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
+p {
+    padding-top: 1rem;
+}
+a, p a{
+    color: #336598;
+    border-bottom: 1px solid #336598;
+    padding-top: 1rem;
+
+}
+/*COLOR*/
+body{
+    background-color: #F2F1EF;
+}
+
+
+/*LAYOUT*/
+
+body{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 5%;
+}
+
+header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-content{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer{
+    padding-top: 100%;
+}
+
+img{
+    margin-right: 20px;
+    border-radius: 5px;
+    float: left;
+}
+.small{
+    width: 250px;
+    height: 250px;
+}
+.bigImg {
+    width: 50%;
+    position: absolute;
+    z-index: 2;
+    left: 5%;
+    display: none;
+    border: 1.5px solid #515151;
+}
+ul {
+    list-style-type: none;
+}
+
+hr{
+    margin: 40px 0px;
+    color: #f9f9f9;
+}
+
+.button{
+    padding: 15px;
+    background-color: #515151;
+    color: #fff;
+    margin: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: #333;
+}
+
+/* SHOPPING */
+.shopping-list form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.shopping-item{
+    flex-grow: 1;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.shopping-item:hover{
+    background-color: #EAEAEA;
+}
+.shopping-item h3{
+    text-align: center;
+}
+.price{
+    color: forestgreen;
+    font-weight: bold;
+    text-align: center;
+}
+.shopping-item form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.image-box{
+    width: 250px;
+    height: 250px;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+}
+.image-box img{
+    height:225px;
+}
+.add-to-cart{
+    background-color:forestgreen;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0px;
+    color: ivory;
+    cursor: pointer;
+}
+.checkbox {
+
+}
+input{
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.semester {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+    flex-grow: 3;
+}
+.page-assignments-header {
+    flex-grow: 1;
+}

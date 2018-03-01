@@ -1,0 +1,139 @@
+.skills {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width:100%;
+}
+
+.skills div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 8px 20px;
+}
+
+.skills div p {
+    padding-top: 0rem;
+    min-width: 125px;
+    text-align: right;
+    color: #999999;
+}
+
+.level {
+    background-color: #ffffff;
+    width: 250px;
+    height: 10px;
+    border-radius: 7px;
+    float: left;
+    z-index:1;
+}
+.level::before {
+    content: "";
+    display: block;
+    background-color: #663399;
+    width: 25px;
+    height: 10px;
+    border-radius: 5px 0px 0px 5px;
+    float: left;
+}
+
+.twenty-five.level::before  {
+    -webkit-animation: load-skills-25 1s ease-in forwards; /* Safari 4+ */
+    -moz-animation:    load-skills-25 1s ease-in forwards; /* Fx 5+ */
+    -o-animation:      load-skills-25 1s ease-in forwards; /* Opera 12+ */
+    animation:         load-skills-25 1s ease-in forwards; /* IE */
+}
+
+.fifty.level::before  {
+    -webkit-animation: load-skills-50 1s ease-in forwards; /* Safari 4+ */
+    -moz-animation:    load-skills-50 1s ease-in forwards; /* Fx 5+ */
+    -o-animation:      load-skills-50 1s ease-in forwards; /* Opera 12+ */
+    animation:         load-skills-50 1s ease-in forwards; /* IE */
+}
+
+.seventy-five.level::before  {
+    -webkit-animation: load-skills-75 1s ease-in forwards; /* Safari 4+ */
+    -moz-animation:    load-skills-75 1s ease-in forwards; /* Fx 5+ */
+    -o-animation:      load-skills-75 1s ease-in forwards; /* Opera 12+ */
+    animation:         load-skills-75 1s ease-in forwards; /* IE */
+}
+
+.one-hundred.level::before  {
+    border-radius: 5px;
+    -webkit-animation: load-skills-100 1s ease-in forwards; /* Safari 4+ */
+    -moz-animation:    load-skills-100 1s ease-in forwards; /* Fx 5+ */
+    -o-animation:      load-skills-100 1s ease-in forwards; /* Opera 12+ */
+    animation:         load-skills-100 1s ease-in forwards; /* IE */
+}
+
+/* 25% */
+@-webkit-keyframes load-skills-25 {
+     0%   { width: 0; }
+     100% { width: 25%; }
+ }
+@-moz-keyframes load-skills-25  {
+    0%   { width: 0; }
+    100% { width: 25%; }
+}
+@-o-keyframes load-skills-25  {
+    0%   { width: 0; }
+    100% { width: 25%; }
+}
+@keyframes load-skills-25 {
+    0%   { width: 0; }
+    100% { width: 25%; }
+}
+
+/* 50% */
+@-webkit-keyframes load-skills-50 {
+    0%   { width: 0; }
+    100% { width: 50%; }
+}
+@-moz-keyframes load-skills-50  {
+    0%   { width: 0; }
+    100% { width: 50%; }
+}
+@-o-keyframes load-skills-50  {
+    0%   { width: 0; }
+    100% { width: 50%; }
+}
+@keyframes load-skills-50 {
+    0%   { width: 0; }
+    100% { width: 50%; }
+}
+
+/* 75% */
+@-webkit-keyframes load-skills-75 {
+    0%   { width: 0; }
+    100% { width: 75%; }
+}
+@-moz-keyframes load-skills-75  {
+    0%   { width: 0; }
+    100% { width: 75%; }
+}
+@-o-keyframes load-skills-75  {
+    0%   { width: 0; }
+    100% { width: 75%; }
+}
+@keyframes load-skills-75 {
+    0%   { width: 0; }
+    100% { width: 75%; }
+}
+
+/* 100% */
+@-webkit-keyframes load-skills-100 {
+    0%   { width: 0; }
+    100% { width: 100%; }
+}
+@-moz-keyframes load-skills-100  {
+    0%   { width: 0; }
+    100% { width: 100%; }
+}
+@-o-keyframes load-skills-100 {
+    0%   { width: 0; }
+    100% { width: 100%; }
+}
+@keyframes load-skills-100 {
+    0%   { width: 0; }
+    100% { width: 100%; }
+}
