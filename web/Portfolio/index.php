@@ -67,6 +67,10 @@
                 <?php
                 echo "<p>TEST</p>";
                 foreach ($projects as $project) {
+                    echo "testing";
+                    echo $project['project_title'];
+                }
+                foreach ($projects as $project) {
                 echo "index.php $project";
                 echo "<div class='img-container'>";
                 echo "<a href='".$project['project_html']."' >";
