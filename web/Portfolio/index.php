@@ -64,9 +64,9 @@
                 <!-- Projects /-->
 
                 <?php
-                foreach ($images as $image) {
-                    echo "<img src='".$image['image_url']."'>";
-                }
+//                foreach ($images as $image) {
+//                    echo "<img src='".$image['image_url']."'>";
+//                }
 
                 foreach ($projects as $project) {
 
