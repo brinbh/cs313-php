@@ -2,6 +2,7 @@
     require "db/project_model.php";
 //    require "db/image_model.php";
     $projects = getAllProjects();
+    print "projects: $projects";
 //    $images = getAllImages();
 ?>
 <!DOCTYPE html>
@@ -65,7 +66,7 @@
                 <?php
                 echo "<p>TEST</p>";
                 foreach ($projects as $project) {
-                echo "index.php";
+                echo "index.php $project";
                 echo "<div class='img-container'>";
                 echo "<a href='".$project['project_html']."' >";
                 echo "<img class='project-img' src='".$project['project_img']."'></a>";
