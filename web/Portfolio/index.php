@@ -66,9 +66,9 @@
 
                 <?php
                 echo "<p>TEST</p>";
-                foreach ($projects as $project) {
+                for ($i = 0; $i < 5; $i++) {
                     echo "testing";
-                    echo $project['project_title'];
+                    echo $projects[$i]['project_title'];
                 }
                 foreach ($projects as $project) {
                 echo "index.php $project";
