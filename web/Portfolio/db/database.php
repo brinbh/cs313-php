@@ -2,6 +2,9 @@
 <body>
 
 <?php
+ini_set("log_errors", 1);
+ini_set("error_log", "error.log");
+error_log( "Hello, errors!" );
 
 function get_db() {
     // default Heroku Postgres configuration URL
