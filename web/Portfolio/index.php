@@ -1,6 +1,6 @@
 <?php
-    require "db/project_model.php";
-    $projects = getAllProjects();
+//    require "db/project_model.php";
+//    $projects = getAllProjects();
 //    $images = getProjImg();
 ?>
 <!DOCTYPE html>
@@ -60,17 +60,17 @@
             </div>
             <div class="row projects-container">
                 <!-- Projects /-->
-
-                <?php
-//                foreach ($images as $image) {
-//                    echo $image["image_url"];
-//                }
-                foreach ($projects as $project) {
-                    echo "<div class='img-container'>";
-                    print "<a href='".$project['project_html']."'>";
-                    print "<p>".$project['project_title']."</p></a>";
-                    echo "</div>";
-                }?>
+//
+//                <?php
+////                foreach ($images as $image) {
+////                    echo $image["image_url"];
+////                }
+//                foreach ($projects as $project) {
+//                    echo "<div class='img-container'>";
+//                    print "<a href='".$project['project_html']."'>";
+//                    print "<p>".$project['project_title']."</p></a>";
+//                    echo "</div>";
+//                }?>
 
             </div>
         </div>
