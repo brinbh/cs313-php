@@ -63,7 +63,7 @@
 //
                 <?php
                 foreach ($images as $image) {
-                    echo $image["image_url"];
+                    print $image['image_url'];
                 }
 //                foreach ($projects as $project) {
 //                    echo "<div class='img-container'>";
