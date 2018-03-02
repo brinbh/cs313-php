@@ -15,23 +15,19 @@ function getAllProjects() {
     return $projectData;
 }
 
-// get images
-function getProjImg() {
-    $db = get_db();
-    $query = 'SELECT image_url, image_project FROM image i'
-            .'INNER JOIN image_project_mapping ip ON ip.image_id = i.image_id
-            .'WHERE ip.project_id = i.image_project';
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    $projectImg = $stmt->fetchAll();
-    $stmt->closeCursor();
-
-    return $projectImg;
-}
-
-function getProjectById(){
-
-}
+//// get images
+//function getProjImg() {
+//    $db = get_db();
+//    $query = 'SELECT image_url, image_project FROM image i'
+//            .'INNER JOIN image_project_mapping ip ON ip.image_id = i.image_id
+//            .'WHERE ip.project_id = i.image_project';
+//    $stmt = $db->prepare($query);
+//    $stmt->execute();
+//    $projectImg = $stmt->fetchAll();
+//    $stmt->closeCursor();
+//
+//    return $projectImg;
+//}
 
 // add
 function addProject($projectTitle, $projectHtml, $projectDescription, $portfolioId, $tagId) {
