@@ -3,31 +3,31 @@
 require "database.php";
 
 // get
-//function getAllProjects() {
-//    $db = get_db();
-//    $query = 'SELECT project_id, project_title, project_html, project_description'
-//            .'FROM project';
-//    $stmt = $db->prepare($query);
-//    $stmt->execute();
-//    $projectData = $stmt->fetchAll();
-//    $stmt->closeCursor();
-//
-//    return $projectData;
-//}
-
-//// get images
-function getProjImg() {
+function getAllProjects() {
     $db = get_db();
-    $query = 'SELECT image_id, image_url, image_project FROM image i'
-            .'INNER JOIN image_project_mapping ip ON ip.image_id = i.image_id
-            .'WHERE ip.project_id = i.image_project';
+    $query = 'SELECT project_id, project_title, project_html, project_description'
+            .'FROM project';
     $stmt = $db->prepare($query);
     $stmt->execute();
-    $projectImg = $stmt->fetchAll();
+    $projectData = $stmt->fetchAll();
     $stmt->closeCursor();
 
-    return $projectImg;
+    return $projectData;
 }
+
+//// get images
+//function getProjImg() {
+//    $db = get_db();
+//    $query = 'SELECT image_id, image_url, image_project FROM image i'
+//            .'INNER JOIN image_project_mapping ip ON ip.image_id = i.image_id
+//            .'WHERE ip.project_id = i.image_project';
+//    $stmt = $db->prepare($query);
+//    $stmt->execute();
+//    $projectImg = $stmt->fetchAll();
+//    $stmt->closeCursor();
+//
+//    return $projectImg;
+//}
 
 // add
 function addProject($projectTitle, $projectHtml, $projectDescription, $portfolioId, $tagId) {
