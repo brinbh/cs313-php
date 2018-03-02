@@ -67,7 +67,7 @@
 //                    print $image['image_url'];
 //                }
                 echo "Projects 02: ";
-                echo ($projects);
+                print ($projects);
                 foreach ($projects as $project) {
                     echo "foreach...";
                     echo "<div class='img-container'>";
