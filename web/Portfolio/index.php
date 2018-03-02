@@ -1,5 +1,5 @@
 <?php
-//    require "db/project_model.php";
+    require "db/project_model.php";
 //    $projects = getAllProjects();
 //    $images = getProjImg();
 ?>
