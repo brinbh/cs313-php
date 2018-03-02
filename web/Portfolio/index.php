@@ -68,7 +68,7 @@
                 foreach ($projects as $project) {
 
                     echo "<div class='img-container'>";
-                    echo "<a href='".$project_html."'>";
+                    echo "<a href='".$project["project_html"]."'>";
                     echo "<p>".$project["project_title"]."</p></a>";
                     echo "</div>";
                 }?>
