@@ -23,10 +23,10 @@ function getProjImg() {
             .'WHERE ip.project_id = i.image_project';
     $stmt = $db->prepare($query);
     $stmt->execute();
-    $projectData = $stmt->fetchAll();
+    $projectImg = $stmt->fetchAll();
     $stmt->closeCursor();
 
-    return $projectData;
+    return $projectImg;
 }
 
 function getProjectById(){
