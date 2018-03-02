@@ -66,10 +66,9 @@
 //                    echo $image["image_url"];
 //                }
                 foreach ($projects as $project) {
-
                     echo "<div class='img-container'>";
-                    echo "<a href='".$project["project_html"]."'>";
-                    echo "<p>".$project["project_title"]."</p></a>";
+                    print "<a href='".$project['project_html']."'>";
+                    print "<p>".$project['project_title']."</p></a>";
                     echo "</div>";
                 }?>
 
