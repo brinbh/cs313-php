@@ -1,7 +1,10 @@
 <?php
     require "db/project_model.php";
+    ini_set("log_errors", 1);
+    ini_set("error_log", "error.log");
+    error_log( "Hello, errors!" );
     $projects = getAllProjects();
-    $images = getProjImg();
+//    $images = getProjImg();
 ?>
 <!DOCTYPE html>
 <html>
