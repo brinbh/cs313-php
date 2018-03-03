@@ -37,10 +37,10 @@ function getProjectId($projectTitle) {
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
     $stmt->execute();
-    $projectId == $stmt->fetchAll();
+    $projectId = $stmt->fetchAll();
     $stmt->closeCursor();
-    echo "<br>projectTitle: ".$projectTitle."<br>";
-    echo "<br>projectId: ".$projectId."<br>";
+    echo "projectTitle: ".$projectTitle."<br>";
+    echo "projectId: ".$projectId."<br>";
     return $projectId;
 }
 
