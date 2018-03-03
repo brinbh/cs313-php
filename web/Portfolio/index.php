@@ -63,6 +63,8 @@
                 <?php
                 foreach ($images as $image) {
                     print $image['image_url'];
+                    print $image['project_title'];
+                    print $image['project_html'];
                 }
 //                echo "Projects 02: ";
 //                foreach ($projects as $project) {
