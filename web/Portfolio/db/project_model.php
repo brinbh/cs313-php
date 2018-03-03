@@ -52,7 +52,7 @@ function getImageId($imageProject) {
     $stmt->execute();
     $imageId = $stmt->fetch();
     $stmt->closeCursor();
-    echo "<br>imageID: ".$imageId;
+    echo "<br>imageID: ".$imageId['image_id'];
     return $imageId['image_id'];
 }
 
