@@ -29,12 +29,14 @@ function getProjImg() {
     return $projectImg;
 }
 
-function getProjectId($projectTitle) {
+function getProjectId((string)$projectTitle) {
     $db = get_db();
     $query = 'SELECT project_id FROM project WHERE project_title = :project_title';
     echo $query;
+    echo "<br>";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
+    echo $stmt;
     $stmt->execute();
     $projectId == $stmt->fetchAll();
     $stmt->closeCursor();
