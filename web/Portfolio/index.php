@@ -61,9 +61,9 @@
             <div class="row projects-container">
                 <!-- Projects /-->
                 <?php
-//                foreach ($images as $image) {
-//                    print $image['image_url'];
-//                }
+                foreach ($images as $image) {
+                    print $image['image_url'];
+                }
 //                echo "Projects 02: ";
 //                foreach ($projects as $project) {
 //                    echo "<div class='img-container'>";
