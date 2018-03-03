@@ -9,7 +9,7 @@ error_log( "Hello, errors!" );
 function getAllProjects() {
     echo " getAllProjects()";
     $db = get_db();
-    $query = 'SELECT project_id, project_title, project_html, project_description'
+    $query = 'SELECT * '
             .'FROM project';
     $stmt = $db->prepare($query);
     $stmt->execute();
