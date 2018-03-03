@@ -62,9 +62,10 @@
                 <!-- Projects /-->
                 <?php
                 foreach ($images as $image) {
-                    print $image['image_url'];
-                    print $image['project_title'];
-                    print $image['project_html'];
+                    print "<a href='".$image['project_html']."' >";
+                    print "<img src='".$image['image_url']."' alt='";
+                    print $image['project_title']."' >";
+                    print "</a>";
                 }
 //                echo "Projects 02: ";
 //                foreach ($projects as $project) {
