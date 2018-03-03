@@ -50,9 +50,9 @@ function getImageId($imageProject) {
     $stmt = $db->prepare($query);
     $stmt->bindValue(':image_project', $imageProject);
     $stmt->execute();
-    $imageProject = $stmt->fetch();
+    $imageId = $stmt->fetch();
     $stmt->closeCursor();
-    return $imageProject['image_project'];
+    return $imageId['image_id'];
 }
 
 // get an id by title
