@@ -31,7 +31,7 @@ function getProjImg() {
 
 function getProjectId($projectTitle) {
     $db = get_db();
-    $query = 'SELECT project_id FROM project WHERE project_title = :project_title';
+    $query = 'SELECT project_id FROM project WHERE project_title = ":project_title"';
     echo $query;
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
