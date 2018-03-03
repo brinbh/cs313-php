@@ -62,11 +62,13 @@
 //
                 <?php
                 foreach ($images as $image) {
-
-                    print "<div class='img-container'>";
-                    print "<a href='".$image['project_html']."'>";
-                    print "<img src='".$image['image_url']." alt='".$image['project_title']."'></a>";
-                    print "</div>";
+                    print $image['project_html'];
+                    print $image['project_title'];
+                    print $image['image_url'];
+//                    print "<div class='img-container'>";
+//                    print "<a href='".$image['project_html']."'>";
+//                    print "<img src='".$image['image_url']." alt='".$image['project_title']."'></a>";
+//                    print "</div>";
                 }
 //                foreach ($projects as $project) {
 //                    echo "<div class='img-container'>";
