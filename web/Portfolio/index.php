@@ -64,7 +64,7 @@
                 foreach ($images as $image) {
 //                    print $image['project_html'];
 //                    print $image['project_title'];
-                    print $image['image_url'];
+                    print $image['i.image_url'];
 //                    print "<div class='img-container'>";
 //                    print "<a href='".$image['project_html']."'>";
 //                    print "<img src='".$image['image_url']." alt='".$image['project_title']."'></a>";
