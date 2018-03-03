@@ -40,20 +40,19 @@ function getProjectId($projectTitle) {
     $projectId = $stmt->fetch();
     $stmt->closeCursor();
     echo "projectTitle: ".$projectTitle."<br>";
-    echo "projectId: ".$projectId."<br>";
-    return $projectId;
+    echo "projectId: ".$projectId['project_id']."<br>";
+    return $projectId['project_id'];
 }
 
 function addImage($projectTitle) {
     //get project id
     $imageProject = getProjectId($projectTitle);
+    echo "imageProjectId: ".$imageProject;
     $imageUrl = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
 
     $db = get_db();
     $query = 'INSERT INTO image (image_url, image_project) '
               .'VALUES (:image_url, :image_project)';
-    echo $query;
-    echo "<br>";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':image_url', $imageUrl);
     $stmt->bindValue(':image_project', $imageProject);
@@ -69,8 +68,6 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
     $portfolioId = 1;
     $query = 'INSERT INTO project (project_title, project_html, project_description, portfolio_id) '
               .'VALUES (:project_title, :project_html, :project_description, :portfolio_id)';
-    echo $query;
-    echo "<br>";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
     $stmt->bindValue(':project_html', $projectHtml);
