@@ -29,7 +29,7 @@ function getProjImg() {
     return $projectImg;
 }
 
-addImageProjectMapping($projectId, $imageId) {
+function addImageProjectMapping($projectId, $imageId) {
     $db = get_db();
     $query = 'INSERT INTO image_project_mapping (image_id, project_id) '
               .'VALUES (:image_id, :project_id)';
