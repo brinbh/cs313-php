@@ -1,5 +1,6 @@
 <?php
-    $projects = getAllProjects();
+    require "db/project_model.php";
+//    $projects = getAllProjects();
     $images = getProjImg();
 ?>
 <!DOCTYPE html>
