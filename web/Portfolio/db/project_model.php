@@ -66,6 +66,7 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
     $portfolioId = 1;
     $query = 'INSERT INTO project (project_title, project_html, project_description, portfolio_id) '
               .'VALUES (:project_title, :project_html, :project_description, :portfolio_id)';
+    echo $query;
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
     $stmt->bindValue(':project_html', $projectHtml);
