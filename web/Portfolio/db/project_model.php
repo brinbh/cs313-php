@@ -34,7 +34,7 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
     $db = get_db();
 //    $projectImg = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
     $portfolioId = 1;
-    $query = 'INSERT INTO project (project_title, project_html, project_description, portfolio_id) ';
+    $query = 'INSERT INTO project (project_title, project_html, project_description, portfolio_id) '
               .'VALUES (:project_title, :project_html, :project_description, :portfolio_id)';
     echo $query;
     $stmt = $db->prepare($query);
