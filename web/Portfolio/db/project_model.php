@@ -50,13 +50,13 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
 
 // delete
 function deleteProject($projectId) {
-//    $db = get_db();
-//    $query = 'DELETE FROM project WHERE project_id = :project_id';
-//    echo $query;
-//    $stmt = $db->prepare($query);
-//    $stmt->bindValue(':project_id', $projectId);
-//    $stmt->execute();
-//    $stmt->closeCursor();
+    $db = get_db();
+    $query = 'DELETE FROM project WHERE project_id = :project_id';
+    echo $query;
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(':project_id', $projectId);
+    $stmt->execute();
+    $stmt->closeCursor();
 
     return "$portfolioId has been deleted!";
 
