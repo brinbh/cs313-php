@@ -44,6 +44,7 @@ function addImageProjectMapping($projectId, $imageId) {
 
 // get image id by project id
 function getImageId($imageProject) {
+    echo '<br>imageProject: '.$imageProject;
     $db = get_db();
     $query = 'SELECT image_id FROM image WHERE image_project = :image_project';
     $stmt = $db->prepare($query);
@@ -51,7 +52,7 @@ function getImageId($imageProject) {
     $stmt->execute();
     $imageId = $stmt->fetch();
     $stmt->closeCursor();
-    echo "imageID: ".$imageId;
+    echo "<br>imageID: ".$imageId;
     return $imageId['image_id'];
 }
 
