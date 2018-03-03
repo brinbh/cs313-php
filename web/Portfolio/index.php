@@ -61,21 +61,14 @@
             <div class="row projects-container">
                 <!-- Projects /-->
                 <?php
-                foreach ($images as $image) {
-                    print "<div class='img-container'>";
-                    print "<a href='".$image['project_html']."' >";
-                    print "<img class='project-img' src='".$image['image_url']."' alt='";
-                    print $image['project_title']."' >";
-                    print "</a>";
-                    print "</div>";
-                }
-//                echo "Projects 02: ";
-//                foreach ($projects as $project) {
-//                    echo "<div class='img-container'>";
-//                    print "<a href='".$project['project_html']."'>";
-//                    print "<p>".$project['project_title']."</p></a>";
-//                    echo "</div>";
-//                }
+                    foreach ($images as $image) {
+                        print "<div class='img-container'>";
+                        print "<a href='".$image['project_html']."' >";
+                        print "<img class='project-img' src='".$image['image_url']."' alt='";
+                        print $image['project_title']."' >";
+                        print "</a>";
+                        print "</div>";
+                    }
                 ?>
 
             </div>

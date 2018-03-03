@@ -1,10 +1,9 @@
 <?php
-ini_set("log_errors", 1);
-ini_set("error_log", "error.log");
-error_log( "Hello, errors!" );
     session_start();
     require "db/project_model.php";
-    $projects = getAllProjects();
+//    $projects = getAllProjects();
+    $images = getProjImg();
+
     if (isset($_POST['ptitle']) &&
         isset($_POST['pHtml']) &&
         isset($_POST['pDescription']) &&
@@ -54,11 +53,14 @@ error_log( "Hello, errors!" );
                 <form action="manage-project.php" method="post">
                 <div class="projects">
                 <?php
-                    foreach ($projects as $project) {
-                        echo "<div><a href='".$project['project_html']."' >";
-                        echo "<img class='project-img-manage' src='".$project['project_img']."'></a>";
-                        echo "<input type='checkbox' name='delete-project' value='".$project['project_id']."' class='delete'></div>";
-                }?>
+                foreach ($images as $image) {
+                    print "<div>";
+                    print "<img class='project-img-manage' src='".$image['image_url']."' alt='";
+                    print $image['project_title']."' >";
+                    print "<input type='checkbox' name='delete-project' value='".$image['project_id']."' class='delete'>
+                    print "</div>";
+                }
+                ?>
                 </div>
                 <input type="hidden" value="project">
                 <input type="submit" class="button" value="Delete">
