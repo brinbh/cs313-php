@@ -31,18 +31,17 @@ function getProjImg() {
 
 // add
 function addProject($projectTitle, $projectHtml, $projectDescription) {
-//    $db = get_db();
+    $db = get_db();
 //    $projectImg = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
-//    $query = 'INSERT INTO project (project_title, project_html, project_description, project_img) ';
-//              .'VALUES (:project_title, :project_html, :project_description, :project_img)';
-//    echo $query;
-//    $stmt = $db->prepare($query);
-//    $stmt->bindValue(':project_title', $projectTitle);
-//    $stmt->bindValue(':project_html', $projectHtml);
-//    $stmt->bindValue(':project_description', $projectDescription);
-//    $stmt->bindValue(':project_img', $projectImg);
-//    $stmt->execute();
-//    $stmt->closeCursor();
+    $query = 'INSERT INTO project (project_title, project_html, project_description) ';
+              .'VALUES (:project_title, :project_html, :project_description)';
+    echo $query;
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(':project_title', $projectTitle);
+    $stmt->bindValue(':project_html', $projectHtml);
+    $stmt->bindValue(':project_description', $projectDescription);
+    $stmt->execute();
+    $stmt->closeCursor();
 
     return "Thanks for adding $projectTitle!";
 
