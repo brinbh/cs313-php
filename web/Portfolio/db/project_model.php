@@ -29,6 +29,36 @@ function getProjImg() {
     return $projectImg;
 }
 
+function getProjectId($projectTitle) {
+$db = get_db();
+    $query = 'SELECT project_id FROM project WHERE project_title = :project_title';
+    echo $query;
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(':project_title', $projectTitle);
+    $stmt->execute();
+    $projectId == $stmt->fetchAll();
+    $stmt->closeCursor();
+
+    return $projectId;
+}
+
+function addImage($projectTitle) {
+    //get project id
+    $imageProject = getProjectId($projectTitle);
+    $imageUrl = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+
+    $db = get_db();
+    $query = 'INSERT INTO image (image_url, image_project) '
+              .'VALUES (:image_url, :image_project)';
+    echo $query;
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(':image_url', $imageUrl);
+    $stmt->bindValue(':image_project', $imageProject);
+    $stmt->execute();
+    $stmt->closeCursor();
+
+}
+
 // add
 function addProject($projectTitle, $projectHtml, $projectDescription) {
     $db = get_db();
@@ -36,7 +66,6 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
     $portfolioId = 1;
     $query = 'INSERT INTO project (project_title, project_html, project_description, portfolio_id) '
               .'VALUES (:project_title, :project_html, :project_description, :portfolio_id)';
-    echo $query;
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
     $stmt->bindValue(':project_html', $projectHtml);
@@ -44,6 +73,8 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
     $stmt->bindValue(':portfolio_id', $portfolioId);
     $stmt->execute();
     $stmt->closeCursor();
+
+    addImage($projectTitle);
 
     return "Thanks for adding $projectTitle!";
 
@@ -53,7 +84,6 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
 function deleteProject($projectId) {
     $db = get_db();
     $query = 'DELETE FROM project WHERE project_id = :project_id';
-    echo $query;
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_id', $projectId);
     $stmt->execute();
