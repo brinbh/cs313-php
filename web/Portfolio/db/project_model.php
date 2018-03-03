@@ -32,22 +32,17 @@ function getProjImg() {
 function getProjectId($projectTitle) {
     $db = get_db();
     $query = 'SELECT project_id FROM project WHERE project_title = :project_title';
-    echo $query;
-    echo "<br>";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
     $stmt->execute();
     $projectId = $stmt->fetch();
     $stmt->closeCursor();
-    echo "projectTitle: ".$projectTitle."<br>";
-    echo "projectId: ".$projectId['project_id']."<br>";
     return $projectId['project_id'];
 }
 
 function addImage($projectTitle) {
     //get project id
     $imageProject = getProjectId($projectTitle);
-    echo "imageProjectId: ".$imageProject;
     $imageUrl = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
 
     $db = get_db();
