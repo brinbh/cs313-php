@@ -20,6 +20,7 @@ function getProjImg() {
             .'INNER JOIN image_project_mapping ip ON ip.image_id = i.image_id '
             .'INNER JOIN project p ON p.project_id = ip.project_id '
             .'WHERE p.project_id = i.image_project';
+    echo $query;
     $stmt = $db->prepare($query);
     $stmt->execute();
     $projectImg = $stmt->fetchAll();
