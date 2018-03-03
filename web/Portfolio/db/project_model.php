@@ -33,13 +33,15 @@ function getProjImg() {
 function addProject($projectTitle, $projectHtml, $projectDescription) {
     $db = get_db();
 //    $projectImg = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+    $portfolioId = 1;
     $query = 'INSERT INTO project (project_title, project_html, project_description, portfolio_id) ';
-              .'VALUES (:project_title, :project_html, :project_description, 1)';
+              .'VALUES (:project_title, :project_html, :project_description, :portfolio_id)';
     echo $query;
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
     $stmt->bindValue(':project_html', $projectHtml);
     $stmt->bindValue(':project_description', $projectDescription);
+    $stmt->bindValue(':portfolio_id', $portfolioId);
     $stmt->execute();
     $stmt->closeCursor();
 

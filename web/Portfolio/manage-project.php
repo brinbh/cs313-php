@@ -7,15 +7,14 @@
         $pTitle = (string)$_POST['pTitle'];
         $pHtml = (string)$_POST['pHtml'];
         $pDescription = (string)$_POST['pDescription'];
-        $portfolioId = (int)2;
-//        $result = addProject($pTitle, $pHtml, $pDescription);
+        $result = addProject($pTitle, $pHtml, $pDescription);
         echo "<meta http-equiv='refresh' content='0'>";
 
     } else {
         $result = "You need to fill out all the fields.";
     }
     if (isset($_POST['delete-project'])) {
-//        deleteProject($_POST['delete-project']);
+        deleteProject($_POST['delete-project']);
         echo "<meta http-equiv='refresh' content='0'>";
     }
 
