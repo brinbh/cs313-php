@@ -57,7 +57,7 @@
                     print "<div>";
                     print "<img class='project-img-manage' src='".$image['image_url']."' alt='";
                     print $image['project_title']."' >";
-                    print "<input type='checkbox' name='delete-project' value='".$image['project_id']."' class='delete'>
+                    print "<input type='checkbox' name='delete-project' value='".$image['project_id']."' class='delete'>";
                     print "</div>";
                 }
                 ?>
