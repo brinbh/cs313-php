@@ -15,6 +15,7 @@ function getAllProjects() {
 
 // get images
 function getProjImg() {
+    echo "getProjImg()";
     $db = get_db();
     $query = 'SELECT i.image_id, i.image_url, i.image_project, p.project_id, p.project_html FROM image i '
             .'INNER JOIN image_project_mapping ip ON ip.image_id = i.image_id '
