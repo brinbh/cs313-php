@@ -4,7 +4,7 @@
     ini_set("error_log", "error.log");
     error_log( "Hello, errors!" );
     $projects = getAllProjects();
-//    $images = getProjImg();
+    $images = getProjImg();
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,13 +65,11 @@
                 <!-- Projects /-->
 //
                 <?php
-//                foreach ($images as $image) {
-//                    print $image['image_url'];
-//                }
+                foreach ($images as $image) {
+                    print $image['image_url'];
+                }
                 echo "Projects 02: ";
-                print ($projects);
                 foreach ($projects as $project) {
-                    echo "foreach...";
                     echo "<div class='img-container'>";
                     print "<a href='".$project['project_html']."'>";
                     print "<p>".$project['project_title']."</p></a>";
