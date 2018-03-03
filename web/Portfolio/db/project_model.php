@@ -31,18 +31,18 @@ function getProjImg() {
 
 // add
 function addProject($projectTitle, $projectHtml, $projectDescription) {
-    $db = get_db();
-    $projectImg = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
-    $query = 'INSERT INTO project (project_title, project_html, project_description, project_img) ';
-              .'VALUES (:project_title, :project_html, :project_description, :project_img)';
-    echo $query;
-    $stmt = $db->prepare($query);
-    $stmt->bindValue(':project_title', $projectTitle);
-    $stmt->bindValue(':project_html', $projectHtml);
-    $stmt->bindValue(':project_description', $projectDescription);
-    $stmt->bindValue(':project_img', $projectImg);
-    $stmt->execute();
-    $stmt->closeCursor();
+//    $db = get_db();
+//    $projectImg = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+//    $query = 'INSERT INTO project (project_title, project_html, project_description, project_img) ';
+//              .'VALUES (:project_title, :project_html, :project_description, :project_img)';
+//    echo $query;
+//    $stmt = $db->prepare($query);
+//    $stmt->bindValue(':project_title', $projectTitle);
+//    $stmt->bindValue(':project_html', $projectHtml);
+//    $stmt->bindValue(':project_description', $projectDescription);
+//    $stmt->bindValue(':project_img', $projectImg);
+//    $stmt->execute();
+//    $stmt->closeCursor();
 
     return "Thanks for adding $projectTitle!";
 
@@ -50,13 +50,13 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
 
 // delete
 function deleteProject($projectId) {
-    $db = get_db();
-    $query = 'DELETE FROM project WHERE project_id = :project_id';
-    echo $query;
-    $stmt = $db->prepare($query);
-    $stmt->bindValue(':project_id', $projectId);
-    $stmt->execute();
-    $stmt->closeCursor();
+//    $db = get_db();
+//    $query = 'DELETE FROM project WHERE project_id = :project_id';
+//    echo $query;
+//    $stmt = $db->prepare($query);
+//    $stmt->bindValue(':project_id', $projectId);
+//    $stmt->execute();
+//    $stmt->closeCursor();
 
     return "$portfolioId has been deleted!";
 
