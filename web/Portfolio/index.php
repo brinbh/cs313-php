@@ -1,7 +1,7 @@
 <?php
     require "db/project_model.php";
 //    $projects = getAllProjects();
-//    $images = getProjImg();
+    $images = getProjImg();
 ?>
 <!DOCTYPE html>
 <html>
