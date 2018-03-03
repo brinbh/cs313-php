@@ -21,9 +21,10 @@ function getAllProjects() {
 // get images
 function getProjImg() {
     $db = get_db();
-    $query = 'SELECT i.image_id, i.image_url, i.image_project FROM image i '
+    $query = 'SELECT i.image_id, i.image_url, i.image_project, p.project_id, p.project_url FROM image i '
             .'INNER JOIN image_project_mapping ip ON ip.image_id = i.image_id '
-            .'WHERE ip.project_id = i.image_project';
+            .'INNER JOIN project p ON p.project_id = ip.project_id '
+            .'WHERE p.project_id = i.image_project';
     echo $query;
     $stmt = $db->prepare($query);
     $stmt->execute();
