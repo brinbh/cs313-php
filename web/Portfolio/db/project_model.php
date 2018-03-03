@@ -29,7 +29,7 @@ function getProjImg() {
     return $projectImg;
 }
 
-function getProjectId((string)$projectTitle) {
+function getProjectId($projectTitle) {
     $db = get_db();
     $query = 'SELECT project_id FROM project WHERE project_title = :project_title';
     echo $query;
