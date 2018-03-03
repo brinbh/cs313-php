@@ -38,7 +38,7 @@ function getProjectId($projectTitle) {
     $stmt->execute();
     $projectId == $stmt->fetchAll();
     $stmt->closeCursor();
-    echo "<br>$projectId<br>";
+    echo $projectId."<br>";
     return $projectId;
 }
 
