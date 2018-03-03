@@ -64,7 +64,7 @@ function getProjectId($projectTitle) {
     $projectId = $stmt->fetch();
     $stmt->closeCursor();
 
-    $imageId = getImageId($projectId);
+    $imageId = getImageId($projectId['project_id']);
     addImageProjectMapping($projectId['project_id'], $imageId);
     return $projectId['project_id'];
 }
