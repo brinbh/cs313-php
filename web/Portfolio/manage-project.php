@@ -1,21 +1,15 @@
 <?php
     session_start();
     require "db/project_model.php";
-//    $projects = getAllProjects();
     $images = getProjImg();
 
-    if (isset($_POST['ptitle']) &&
-        isset($_POST['pHtml']) &&
-        isset($_POST['pDescription']) &&
-        isset($_POST['portfolioId']) &&
-        isset($_POST['tagId'])) {
+    if (isset($_POST['add-project'])) {
         $pTitle = (string)$_POST['ptitle'];
         $pHtml = (string)$_POST['pHtml'];
         $pDescription = (string)$_POST['pDescription'];
         $portfolioId = (int)2;
-        $tagId = (int)$_POST['tagId'];
 
-        $result = addProject($pTitle, $pHtml, $pDescription, $portfolioId, $tagId);
+        $result = addProject($pTitle, $pHtml, $pDescription);
         echo "<meta http-equiv='refresh' content='0'>";
 
     } else {
@@ -73,9 +67,7 @@
                     <h3>Project Title: </h3><input type="text" name="ptitle"><br>
                     <h3>Project Url: </h3><input type="text" name="pHtml"><br>
                     <h3>Project Description: </h3><input type="text" name="pDescription">
-                    <h3>Portfolio Id: </h3><input type="text" name="portfolioId">
-                    <h3>Tag Id: </h3><input type="text" name="tagId">
-                    <input type="hidden" name="action" value="project">
+                    <input type="hidden" name="add-project" value="project">
                     <input class="button" type="submit">
                 </form>
             </div>

@@ -30,17 +30,16 @@ function getProjImg() {
 }
 
 // add
-function addProject($projectTitle, $projectHtml, $projectDescription, $portfolioId, $tagId) {
+function addProject($projectTitle, $projectHtml, $projectDescription) {
     $db = get_db();
     $projectImg = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
-    $query = 'INSERT INTO portfolio.project (project_title, project_html, project_description, portfolio_id, tag_id, project_img)
-              VALUES (:project_title, :project_html, :project_description, :portfolio_id, :tag_id, :project_img)';
+    $query = 'INSERT INTO portfolio.project (project_title, project_html, project_description, project_img) ';
+              .'VALUES (:project_title, :project_html, :project_description, :project_img)';
+    echo $query;
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
     $stmt->bindValue(':project_html', $projectHtml);
     $stmt->bindValue(':project_description', $projectDescription);
-    $stmt->bindValue(':portfolio_id', $portfolioId);
-    $stmt->bindValue(':tag_id', $tagId);
     $stmt->bindValue(':project_img', $projectImg);
     $stmt->execute();
     $stmt->closeCursor();
@@ -52,7 +51,8 @@ function addProject($projectTitle, $projectHtml, $projectDescription, $portfolio
 // delete
 function deleteProject($projectId) {
     $db = get_db();
-    $query = 'DELETE FROM portfolio.project WHERE project_id = :project_id';
+    $query = 'DELETE FROM project WHERE project_id = :project_id';
+    echo $query;
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_id', $projectId);
     $stmt->execute();
