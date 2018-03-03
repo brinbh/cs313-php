@@ -29,6 +29,30 @@ function getProjImg() {
     return $projectImg;
 }
 
+addImageProjectMapping($projectId, $imageId) {
+    $db = get_db();
+    $query = 'INSERT INTO image_project_mapping (image_id, project_id) '
+              .'VALUES (:image_id, :project_id)';
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(':image_id', $imageId);
+    $stmt->bindValue(':project_id', $projectId);
+    $stmt->execute();
+    $stmt->closeCursor();
+}
+
+// get image id by project id
+function getImageId($imageProject) {
+    $db = get_db();
+    $query = 'SELECT image_id FROM image WHERE image_project = :image_project';
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(':image_project', $imageProject);
+    $stmt->execute();
+    $imageProject = $stmt->fetch();
+    $stmt->closeCursor();
+    return $imageProject['image_project'];
+}
+
+// get an id by title
 function getProjectId($projectTitle) {
     $db = get_db();
     $query = 'SELECT project_id FROM project WHERE project_title = :project_title';
@@ -37,6 +61,9 @@ function getProjectId($projectTitle) {
     $stmt->execute();
     $projectId = $stmt->fetch();
     $stmt->closeCursor();
+
+    $imageId = getImageId($projectId);
+    addImageProjectMapping($projectId, $imageId);
     return $projectId['project_id'];
 }
 
