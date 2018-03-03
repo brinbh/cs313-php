@@ -38,7 +38,7 @@ function getProjectId($projectTitle) {
     $stmt->execute();
     $projectId == $stmt->fetchAll();
     $stmt->closeCursor();
-
+    echo "<br>$projectId<br>";
     return $projectId;
 }
 
@@ -51,6 +51,7 @@ function addImage($projectTitle) {
     $query = 'INSERT INTO image (image_url, image_project) '
               .'VALUES (:image_url, :image_project)';
     echo $query;
+    echo "<br>";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':image_url', $imageUrl);
     $stmt->bindValue(':image_project', $imageProject);
@@ -67,6 +68,7 @@ function addProject($projectTitle, $projectHtml, $projectDescription) {
     $query = 'INSERT INTO project (project_title, project_html, project_description, portfolio_id) '
               .'VALUES (:project_title, :project_html, :project_description, :portfolio_id)';
     echo $query;
+    echo "<br>";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
     $stmt->bindValue(':project_html', $projectHtml);
