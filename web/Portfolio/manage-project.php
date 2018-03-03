@@ -8,7 +8,6 @@
         $pHtml = (string)$_POST['pHtml'];
         $pDescription = (string)$_POST['pDescription'];
         $portfolioId = (int)2;
-
 //        $result = addProject($pTitle, $pHtml, $pDescription);
         echo "<meta http-equiv='refresh' content='0'>";
 
@@ -61,9 +60,9 @@
                 <h2>Add a New Project</h2>
                 <?php echo "$result"; ?>
                 <form action="manage-project.php" method="post">
-                    <h3>Project Title: </h3><input type="text" name="pTitle"><br>
-                    <h3>Project Url: </h3><input type="text" name="pHtml"><br>
-                    <h3>Project Description: </h3><input type="text" name="pDescription">
+                    <h3>Project Title: </h3><input type="text" name="pTitle" required><br>
+                    <h3>Project Url: </h3><input type="text" name="pHtml" required><br>
+                    <h3>Project Description: </h3><input type="text" name="pDescription" required>
                     <input type="hidden" name="add-project" value="project">
                     <input class="button" type="submit">
                 </form>
