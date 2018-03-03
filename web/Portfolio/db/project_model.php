@@ -36,7 +36,6 @@ function getProjectId($projectTitle) {
     echo "<br>";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':project_title', $projectTitle);
-    echo $stmt;
     $stmt->execute();
     $projectId == $stmt->fetchAll();
     $stmt->closeCursor();
