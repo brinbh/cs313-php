@@ -8,7 +8,7 @@
         $pHtml = (string)$_POST['pHtml'];
         $pDescription = (string)$_POST['pDescription'];
         $result = addProject($pTitle, $pHtml, $pDescription);
-        echo "<meta http-equiv='refresh' content='0'>";
+//        echo "<meta http-equiv='refresh' content='0'>";
 
     } else {
         $result = "You need to fill out all the fields.";
